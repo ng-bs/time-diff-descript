@@ -1,0 +1,33 @@
+{
+  "root": "libs/time-diff-descript",
+  "sourceRoot": "libs/time-diff-descript/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/time-diff-descript",
+        "main": "libs/time-diff-descript/src/index.ts",
+        "tsConfig": "libs/time-diff-descript/tsconfig.lib.json",
+        "assets": ["libs/time-diff-descript/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/time-diff-descript/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/time-diff-descript"],
+      "options": {
+        "jestConfig": "libs/time-diff-descript/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
